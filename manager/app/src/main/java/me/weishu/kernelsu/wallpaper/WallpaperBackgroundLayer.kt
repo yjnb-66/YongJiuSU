@@ -3,6 +3,10 @@ package me.weishu.kernelsu.wallpaper
 import android.net.Uri
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -21,6 +25,7 @@ import androidx.compose.ui.draw.blur
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
@@ -81,26 +86,58 @@ fun WallpaperBackgroundLayer(modifier: Modifier = Modifier) {
         }
     }
 
+    // A very slow anime-style sway: the artwork breathes and tilts by about a degree so the screen
+    // feels alive, while the scrim below stays fixed and keeps text contrast stable.
+    val motion = rememberInfiniteTransition(label = "wallpaper-motion")
+    val sway by motion.animateFloat(
+        initialValue = -1f,
+        targetValue = 1f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(durationMillis = 11000, easing = LinearEasing),
+            repeatMode = RepeatMode.Reverse,
+        ),
+        label = "sway",
+    )
+    val breath by motion.animateFloat(
+        initialValue = 1f,
+        targetValue = 1.035f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(durationMillis = 17000, easing = LinearEasing),
+            repeatMode = RepeatMode.Reverse,
+        ),
+        label = "breath",
+    )
+
     Box(modifier = modifier.fillMaxSize().background(Color.Black)) {
-        if (animatedFile != null) {
-            // Animated wallpapers cannot go through the downsampled bitmap path, so they are handed
-            // to the drawable view; the blur is applied as a render effect there.
-            val blurPx = with(LocalDensity.current) { blurRadius.dp.toPx() }
-            AnimatedFileImage(
-                file = animatedFile,
-                revision = uri,
-                modifier = Modifier.fillMaxSize(),
-                blurRadiusPx = blurPx,
-            )
-        } else {
-            // The previous frame stays on screen while the next one decodes, so a page swap fades
-            // into the new image instead of cutting to black.
-            StackedFadeImage(
-                bitmap = image,
-                modifier = Modifier
-                    .fillMaxSize()
-                    .blur(blurRadius.dp),
-            )
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .graphicsLayer {
+                    scaleX = breath
+                    scaleY = breath
+                    rotationZ = sway * 1.1f
+                },
+        ) {
+            if (animatedFile != null) {
+                // Animated wallpapers cannot go through the downsampled bitmap path, so they are handed
+                // to the drawable view; the blur is applied as a render effect there.
+                val blurPx = with(LocalDensity.current) { blurRadius.dp.toPx() }
+                AnimatedFileImage(
+                    file = animatedFile,
+                    revision = uri,
+                    modifier = Modifier.fillMaxSize(),
+                    blurRadiusPx = blurPx,
+                )
+            } else {
+                // The previous frame stays on screen while the next one decodes, so a page swap fades
+                // into the new image instead of cutting to black.
+                StackedFadeImage(
+                    bitmap = image,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .blur(blurRadius.dp),
+                )
+            }
         }
         if (scrim > 0f) {
             Box(modifier = Modifier.fillMaxSize().background(Color.Black.copy(alpha = scrim)))

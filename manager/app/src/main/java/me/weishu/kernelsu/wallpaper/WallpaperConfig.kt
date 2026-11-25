@@ -58,6 +58,10 @@ object WallpaperConfig {
     const val DEFAULT_DIM = 0.2f
     const val DEFAULT_NIGHT_DIM = 0.4f
 
+    /** First-run wallpaper defaults tuned so body text stays readable over the artwork. */
+    const val SEED_DIM = 0.42f
+    const val SEED_BLUR = 6f
+
     /** Main pager indexes used to key the per-page backgrounds. */
     const val PAGE_HOME = 0
     const val PAGE_PLUGIN = 1
@@ -400,7 +404,14 @@ object WallpaperConfig {
             }
             enabled = true
             uri = f.toUri().toString()
-            prefs.edit { putBoolean(KEY_ENABLED, true); putString(KEY_URI, uri) }
+            dim = SEED_DIM
+            blur = SEED_BLUR
+            prefs.edit {
+                putBoolean(KEY_ENABLED, true)
+                putString(KEY_URI, uri)
+                putFloat(KEY_DIM, dim)
+                putFloat(KEY_BLUR, blur)
+            }
         }
         opacity = prefs.getFloat(KEY_OPACITY, DEFAULT_OPACITY)
         blur = prefs.getFloat(KEY_BLUR, 0f)

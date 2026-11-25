@@ -71,7 +71,7 @@ fun AboutScreenMaterial(
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.about_icon_anime),
+                        painter = painterResource(id = R.drawable.ic_app_icon),
                         contentDescription = null,
                         contentScale = ContentScale.Fit,
                         modifier = Modifier.size(80.dp)
