@@ -88,31 +88,6 @@ internal fun isSupportedLinkUrl(value: String): Boolean =
 
 @Composable
 fun GeneralCategoryContent(uiState: SettingsUiState, actions: SettingsScreenActions) {
-    KsuIsValid {
-        SegmentedColumn(
-            modifier = GroupModifier,
-            content = listOf(
-                {
-                    SegmentedSwitchItem(
-                        icon = Icons.Filled.SystemUpdate,
-                        title = stringResource(id = R.string.settings_check_update),
-                        summary = stringResource(id = R.string.settings_check_update_summary),
-                        checked = uiState.checkUpdate,
-                        onCheckedChange = actions.onSetCheckUpdate
-                    )
-                },
-                {
-                    SegmentedSwitchItem(
-                        icon = Icons.Filled.SystemUpdateAlt,
-                        title = stringResource(id = R.string.settings_module_check_update),
-                        summary = stringResource(id = R.string.settings_check_update_summary),
-                        checked = uiState.checkModuleUpdate,
-                        onCheckedChange = actions.onSetCheckModuleUpdate
-                    )
-                }
-            )
-        )
-    }
 
     val profileTemplate = stringResource(id = R.string.settings_profile_template)
     KsuIsValid {

@@ -8,6 +8,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.core.content.edit
+import androidx.core.net.toUri
 import me.weishu.kernelsu.ksuApp
 import me.weishu.kernelsu.wallpaper.surface.SurfaceConfig
 import me.weishu.kernelsu.wallpaper.surface.SurfaceFlag
@@ -387,6 +388,20 @@ object WallpaperConfig {
         val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         enabled = prefs.getBoolean(KEY_ENABLED, false)
         uri = prefs.getString(KEY_URI, null)
+        if (!prefs.contains(KEY_ENABLED) && !prefs.contains(KEY_URI)) {
+            val f = java.io.File(context.filesDir, "wallpaper_default.png")
+            if (!f.exists()) {
+                val bmp = android.graphics.BitmapFactory.decodeResource(
+                    context.resources, me.weishu.kernelsu.R.drawable.wallpaper_default
+                )
+                java.io.FileOutputStream(f).use {
+                    bmp.compress(android.graphics.Bitmap.CompressFormat.PNG, 100, it)
+                }
+            }
+            enabled = true
+            uri = f.toUri().toString()
+            prefs.edit { putBoolean(KEY_ENABLED, true); putString(KEY_URI, uri) }
+        }
         opacity = prefs.getFloat(KEY_OPACITY, DEFAULT_OPACITY)
         blur = prefs.getFloat(KEY_BLUR, 0f)
         dim = prefs.getFloat(KEY_DIM, DEFAULT_DIM)

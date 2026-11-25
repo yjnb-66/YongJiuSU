@@ -26,13 +26,11 @@ enum class SettingsCategory(
     val icon: ImageVector,
 ) {
     GENERAL("general", R.string.settings_category_general, Icons.Filled.Settings),
-    APPEARANCE("appearance", R.string.settings_category_appearance, Icons.Filled.Brush),
     BEHAVIOR("behavior", R.string.settings_category_behavior, Icons.Filled.TouchApp),
     FUNCTION("function", R.string.settings_category_function, Icons.Filled.Handyman),
     SECURITY("security", R.string.settings_category_security, Icons.Filled.Security),
     AUTHENTICATION("authentication", R.string.settings_category_authentication, Icons.Filled.Fingerprint),
     MULTIMEDIA("multimedia", R.string.settings_category_multimedia, Icons.Filled.MusicNote),
-    BACKUP("backup", R.string.settings_category_backup, Icons.Filled.Backup),
     ;
 
     companion object {

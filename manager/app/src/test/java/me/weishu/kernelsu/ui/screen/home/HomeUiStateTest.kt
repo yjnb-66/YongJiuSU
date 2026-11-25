@@ -83,22 +83,11 @@ class HomeUiStateTest {
     )
 
     @Test
-    fun `bundled LKM version mismatch offers a kernel update`() {
-        val update = state(RootShellStatus.Ready).copy(currentManagerVersionCode = 32751)
-        assertTrue(update.showLkmUpdate)
-        assertTrue(update.showKernelUpdateAction)
-    }
-
-    @Test
-    fun `UAPI mismatch chooses the required component`() {
+    fun `update prompts are disabled`() {
         val ready = state(RootShellStatus.Ready)
-        val kernelUpdate = ready.copy(requiresNewKernel = true, kernelUAPIVersion = 4)
-        assertFalse(kernelUpdate.showLkmUpdate)
-        assertTrue(kernelUpdate.showKernelUpdateAction)
-        val managerUpdate = ready.copy(requiresNewManager = true, kernelUAPIVersion = 6)
-        assertFalse(managerUpdate.showLkmUpdate)
-        assertFalse(managerUpdate.showKernelUpdateAction)
-        assertFalse(kernelUpdate.copy(lkmMode = false).showKernelUpdateAction)
+        val update = ready.copy(currentManagerVersionCode = 32751, requiresNewKernel = true, kernelUAPIVersion = 4)
+        assertFalse(update.showLkmUpdate)
+        assertFalse(update.showKernelUpdateAction)
     }
 
     @Test

@@ -69,17 +69,4 @@ class SettingsSearchIndexTest {
         assertEquals(SettingsCategory.FUNCTION, entry.category)
     }
 
-    @Test
-    fun `kernel build hide row is searchable only when the kernel reports it`() {
-        val entry = settingsSearchIndex.single { it.id == "appearance.hide_home_kernel_full_version" }
-        assertFalse(entry.available(SettingsUiState(kernelFullVersionAvailable = false)))
-        assertTrue(entry.available(SettingsUiState(kernelFullVersionAvailable = true)))
-    }
-
-    @Test
-    fun `hook type hide row is searchable only when the manager is installed`() {
-        val entry = settingsSearchIndex.single { it.id == "appearance.hide_home_hook_type" }
-        assertFalse(entry.available(SettingsUiState(hookTypeAvailable = false)))
-        assertTrue(entry.available(SettingsUiState(hookTypeAvailable = true)))
-    }
 }

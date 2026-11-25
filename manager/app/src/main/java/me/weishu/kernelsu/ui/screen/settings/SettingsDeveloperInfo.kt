@@ -39,12 +39,13 @@ import coil.compose.AsyncImage
 import coil.request.CachePolicy
 import coil.request.ImageRequest
 import me.weishu.kernelsu.R
+import me.weishu.kernelsu.ui.AuthorLinks
 import me.weishu.kernelsu.ui.component.material.FolkFilledTonalButton
 import me.weishu.kernelsu.wallpaper.LocalFolkWallpaperTokens
 
-private const val DEVELOPER_GITHUB_URL = "https://github.com/LyraVoid/FinaSU"
-private const val DEVELOPER_TELEGRAM_URL = "https://t.me/FinaSU"
-private const val DEVELOPER_DONATE_URL = "https://ifdian.net/a/matsuzaka_yuki"
+private const val DEVELOPER_GITHUB_URL = AuthorLinks.KUAISHOU_ZHUANJIANG
+private const val DEVELOPER_TELEGRAM_URL = AuthorLinks.KUAISHOU_YONGJIU
+private const val DEVELOPER_DONATE_URL = AuthorLinks.KUAISHOU_YONGJIU
 
 /**
  * The author's profile picture, matching the reference implementation. Served over https because
@@ -111,7 +112,7 @@ internal fun SettingsDeveloperInfo(showDialog: MutableState<Boolean>) {
                 Spacer(modifier = Modifier.height(16.dp))
 
                 Text(
-                    text = "Matsuzaka Yuki",
+                    text = "永久",
                     style = MaterialTheme.typography.titleLargeEmphasized,
                 )
                 Text(
@@ -123,7 +124,7 @@ internal fun SettingsDeveloperInfo(showDialog: MutableState<Boolean>) {
                 Spacer(modifier = Modifier.height(16.dp))
 
                 Text(
-                    text = "\"きょうも いちにち、おつかれさま\"",
+                    text = "感谢支持",
                     textAlign = TextAlign.Center,
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.8f),
@@ -146,7 +147,7 @@ internal fun SettingsDeveloperInfo(showDialog: MutableState<Boolean>) {
                             modifier = Modifier.size(20.dp),
                         )
                         Spacer(Modifier.width(8.dp))
-                        Text(stringResource(R.string.github))
+                        Text("钻酱")
                     }
 
                     FolkFilledTonalButton(
@@ -159,7 +160,7 @@ internal fun SettingsDeveloperInfo(showDialog: MutableState<Boolean>) {
                             modifier = Modifier.size(20.dp),
                         )
                         Spacer(Modifier.width(8.dp))
-                        Text(stringResource(R.string.telegram))
+                        Text("永久")
                     }
                 }
                 Spacer(modifier = Modifier.height(16.dp))
@@ -174,7 +175,7 @@ internal fun SettingsDeveloperInfo(showDialog: MutableState<Boolean>) {
                         modifier = Modifier.size(20.dp),
                     )
                     Spacer(Modifier.width(8.dp))
-                    Text(stringResource(R.string.support_or_donate))
+                    Text("跳转作者快手：永久")
                 }
 
                 Spacer(modifier = Modifier.height(16.dp))

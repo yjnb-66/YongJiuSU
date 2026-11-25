@@ -28,6 +28,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import me.weishu.kernelsu.R
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.Dispatchers
@@ -80,11 +82,11 @@ fun ProfileHeader(
                         modifier = Modifier.fillMaxSize(),
                     )
                 } else {
-                    Icon(
-                        imageVector = Icons.Filled.Person,
+                    Image(
+                        painter = painterResource(id = R.drawable.ic_avatar_default),
                         contentDescription = null,
-                        tint = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier.size(32.dp),
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier.fillMaxSize(),
                     )
                 }
             }

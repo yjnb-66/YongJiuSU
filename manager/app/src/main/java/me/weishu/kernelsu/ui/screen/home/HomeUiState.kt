@@ -88,20 +88,14 @@ data class HomeUiState(
         get() = ksuVersion != null && lkmMode == false
 
     val showLkmUpdate: Boolean
-        get() = isManager &&
-                lkmMode == true &&
-                !isLateLoadMode &&
-                isLkmBundled &&
-                ksuVersion?.toLong() != currentManagerVersionCode &&
-                !requiresNewKernel &&
-                !requiresNewManager
+        get() = false
 
     // Jailbreak mode runs on locked bootloaders, so flashing a boot image would brick the device.
     val canInstallKernelUpdate: Boolean
         get() = lkmMode == true && !isLateLoadMode
 
     val showKernelUpdateAction: Boolean
-        get() = canInstallKernelUpdate && (requiresNewKernel || showLkmUpdate)
+        get() = false
 
     val showCustomLkmBadge: Boolean
         get() = lkmMode == true && !isLkmBundled

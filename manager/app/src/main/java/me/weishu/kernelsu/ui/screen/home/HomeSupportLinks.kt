@@ -28,6 +28,7 @@ import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import me.weishu.kernelsu.R
+import me.weishu.kernelsu.ui.AuthorLinks
 import me.weishu.kernelsu.data.model.SupportLinksStyle
 import me.weishu.kernelsu.ui.component.material.LocalWallpaperSupportingColor
 import me.weishu.kernelsu.ui.component.material.folkPressScale
@@ -102,21 +103,25 @@ private fun LegacySupportLinks(
     }
 }
 
-/** A single row that opens the FinaSU website. */
+/** Two rows that open the authors' Kuaishou profiles. */
 @Composable
 private fun LearnFinaSuCard(
     onOpenUrl: (String) -> Unit,
     modifier: Modifier,
 ) {
-    val learnMoreUrl = stringResource(R.string.home_learn_finasu_url)
-
     HomeCard(modifier = modifier.fillMaxWidth()) {
         Column(modifier = Modifier.fillMaxWidth()) {
             SupportLinkRow(
                 icon = Icons.Outlined.Info,
-                title = stringResource(R.string.home_learn_finasu),
-                subtitle = stringResource(R.string.home_click_to_learn_finasu),
-                onClick = { onOpenUrl(learnMoreUrl) },
+                title = "跳转作者快手：钻酱",
+                subtitle = "点击跳转作者快手主页",
+                onClick = { onOpenUrl(AuthorLinks.KUAISHOU_ZHUANJIANG) },
+            )
+            SupportLinkRow(
+                icon = Icons.Outlined.Info,
+                title = "跳转作者快手：永久",
+                subtitle = "点击跳转作者快手主页",
+                onClick = { onOpenUrl(AuthorLinks.KUAISHOU_YONGJIU) },
             )
         }
     }

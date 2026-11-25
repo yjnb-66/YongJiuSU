@@ -6,7 +6,7 @@
     <string name="install_anykernel">Flash AnyKernel3 ZIP</string>
     <string name="install_anykernel_summary">Run a trusted kernel installer on the current or unused A/B slot. Root required.</string>
     <string name="install_anykernel_page_hint">This external ZIP runs as root. Its installer decides which partitions are written; use only a package trusted for this device.</string>
-    <string name="install_anykernel_warning">This ZIP runs with root and may modify multiple partitions. The installer controls which partitions and slots are written; FinaSU does not override the slot or refresh ksud. A successful install does not guarantee bootability, and failure may leave partial changes. Existing boot-image backups may not cover these changes. Confirm device compatibility and prepare a recovery image before continuing.</string>
+    <string name="install_anykernel_warning">This ZIP runs with root and may modify multiple partitions. The installer controls which partitions and slots are written; YJSU does not override the slot or refresh ksud. A successful install does not guarantee bootability, and failure may leave partial changes. Existing boot-image backups may not cover these changes. Confirm device compatibility and prepare a recovery image before continuing.</string>
     <string name="install_anykernel_root_required">Root is required to flash AnyKernel3.</string>
     <string name="install_anykernel_read_failed">Unable to read the AnyKernel3 ZIP.</string>
     <string name="install_anykernel_target_slot">Target slot</string>
@@ -23,7 +23,7 @@
     <string name="home_click_to_install">Tap to install</string>
     <string name="home_working">Working</string>
     <string name="home_tile_status">KernelSU</string>
-    <string name="home_tile_manager">FinaSU</string>
+    <string name="home_tile_manager">YJSU</string>
     <string name="home_tile_system">System info</string>
     <string name="home_tile_device">Device</string>
     <string name="home_tile_storage">Storage</string>
@@ -165,13 +165,14 @@
     <string name="home_learn_kernelsu">Learn KernelSU</string>
     <string name="home_learn_kernelsu_url">https://kernelsu.org/guide/what-is-kernelsu.html</string>
     <string name="home_click_to_learn_kernelsu">Learn how to install KernelSU and use modules.</string>
-    <string name="home_learn_finasu">Learn about FinaSU</string>
-    <string name="home_learn_finasu_url">https://fina.mysqil.com/</string>
-    <string name="home_click_to_learn_finasu">Discover FinaSU\'s features and modules.</string>
+    <string name="home_learn_finasu">Author Kuaishou: 永久</string>
+    <string name="home_learn_finasu_url">https://estplcb.m.chenzhongtech.com/fw/user/dneg-_-666?cc=share_wxms&amp;kpf=ANDROID_PHONE&amp;fid=4758521766&amp;shareMode=app&amp;shareMethod=picture&amp;appType=21&amp;kpn=KUAISHOU&amp;subBiz=QR_CODE_PROFILE&amp;shareId=19186707264213&amp;shareToken=YgClGwus1&amp;shareObjectId=4758521766</string>
+    <string name="home_click_to_learn_finasu">Tap to open the author's Kuaishou profile.</string>
     <string name="home_support_title">Support Us</string>
     <string name="home_support_content">KernelSU is, and always will be, free, and open source. However, you can show us that you care by making a donation.</string>
     <string name="home_gki_warning">Starting from v3.0.0, the GKI work mode will be used only in testing environments. We do not recommend it for daily use, and image files will no longer be provided.</string>
     <string name="about_source_code"><![CDATA[View source code at %1$s<br/>Join our %2$s channel]]></string>
+    <string name="about_author_links"><![CDATA[%1$s<br/>%2$s]]></string>
     <string name="profile" translatable="false">App Profile</string>
     <string name="profile_default">Default</string>
     <string name="profile_template">Template</string>
@@ -504,7 +505,7 @@
     <string name="settings_section_layout">Layout</string>
     <string name="settings_support_links">Home bottom card</string>
     <string name="settings_support_links_summary">Choose what appears at the bottom of the home screen.</string>
-    <string name="settings_support_links_finasu">Learn about FinaSU</string>
+    <string name="settings_support_links_finasu">Author Kuaishou: 永久</string>
     <string name="settings_support_links_legacy">Support and KernelSU</string>
     <string name="settings_support_links_custom">Custom</string>
     <string name="settings_support_links_hidden">Hidden</string>
@@ -717,14 +718,14 @@
     <string name="download">Download</string>
     <string name="download_cancel">Cancel</string>
     <string name="download_install">Install</string>
-    <string name="settings_finasu_hide" translatable="false">FinaSU Hide</string>
+    <string name="settings_finasu_hide" translatable="false">Hide</string>
     <string name="settings_finasu_hide_summary">Partially hide the Bootloader unlock state</string>
     <string name="settings_finasu_hide_reboot_hint">The real value returns after reboot</string>
-    <string name="settings_finasu_hide_failed">Failed to change FinaSU Hide</string>
+    <string name="settings_finasu_hide_failed">Failed to change Hide</string>
     <string name="settings_adb_root" translatable="false">ADB Root</string>
     <string name="settings_adb_root_summary">Run adbd daemon with Root privileges</string>
-    <string name="feature_external_changes_title">Shared settings were changed outside FinaSU</string>
-    <string name="feature_external_changes_summary">An external module or manager changed these runtime values after FinaSU applied its saved settings. FinaSU will not overwrite them automatically.</string>
+    <string name="feature_external_changes_title">Shared settings were changed outside YJSU</string>
+    <string name="feature_external_changes_summary">An external module or manager changed these runtime values after YJSU applied its saved settings. YJSU will not overwrite them automatically.</string>
     <string name="feature_external_value_on">On</string>
     <string name="feature_external_value_off">Off</string>
     <string name="menu_sort">Sort</string>
@@ -920,7 +921,7 @@
     <string name="backup_section_content">What to back up</string>
     <string name="backup_section_webdav">WebDAV</string>
     <string name="backup_local_enabled">Local folder</string>
-    <string name="backup_local_summary">Saved to Download/FinaSU</string>
+    <string name="backup_local_summary">Saved to Download/YJSU</string>
     <string name="backup_webdav_enabled">WebDAV</string>
     <string name="backup_open_folder">Open backup folder</string>
     <string name="backup_modules">Modules</string>
@@ -1117,11 +1118,11 @@
     <string name="kernel_modules_log_outcome">Result</string>
     <string name="kernel_modules_log_boot">Boot ID</string>
     <string name="kernel_modules_unknown">Unknown</string>
-    <string name="guide_welcome_title">Welcome to FinaSU</string>
+    <string name="guide_welcome_title">Welcome to YJSU</string>
     <string name="guide_welcome_desc">Kernel-level root management with a Zygisk engine, a Shizuku API backend, VFS path redirection and a module mount engine built in.</string>
     <string name="guide_repo_title">Open source on GitHub</string>
     <string name="guide_repo_desc">Source code, issue reports and release notes all live in the repository.</string>
-    <string name="guide_repo_url">github.com/LyraVoid/FinaSU</string>
+    <string name="guide_repo_url">https://estplcb.m.chenzhongtech.com/fw/user/dneg-_-666?cc=share_wxms&amp;kpf=ANDROID_PHONE&amp;fid=4758521766&amp;shareMode=app&amp;shareMethod=picture&amp;appType=21&amp;kpn=KUAISHOU&amp;subBiz=QR_CODE_PROFILE&amp;shareId=19186707264213&amp;shareToken=YgClGwus1&amp;shareObjectId=4758521766</string>
     <string name="guide_repo_action">Open repository</string>
     <string name="guide_features_title">What\'s built in</string>
     <string name="guide_features_desc">Four engines run inside the manager, no extra module required.</string>

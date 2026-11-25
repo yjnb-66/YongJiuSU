@@ -82,13 +82,11 @@ fun CategorySettingsScreen(categoryKey: String) {
             Spacer(modifier = Modifier.height(8.dp))
             when (category) {
                 SettingsCategory.GENERAL -> GeneralCategoryContent(uiState, actions)
-                SettingsCategory.APPEARANCE -> AppearanceCategoryContent(uiState, actions)
                 SettingsCategory.BEHAVIOR -> BehaviorCategoryContent(uiState, actions)
                 SettingsCategory.FUNCTION -> FunctionCategoryContent(uiState, actions)
                 SettingsCategory.SECURITY -> SecurityCategoryContent(uiState, actions)
                 SettingsCategory.AUTHENTICATION -> AuthenticationSettingsContent()
                 SettingsCategory.MULTIMEDIA -> MultimediaCategoryContent()
-                SettingsCategory.BACKUP -> BackupSettingsContent()
                 null -> Unit
             }
             Spacer(modifier = Modifier.height(8.dp))

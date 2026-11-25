@@ -6,7 +6,7 @@
     <string name="install_anykernel">刷入 AnyKernel3 ZIP</string>
     <string name="install_anykernel_summary">在当前槽或未使用的 A/B 槽运行可信内核安装器，需要 root 权限。</string>
     <string name="install_anykernel_page_hint">此 ZIP 会以 root 执行，实际写入范围由安装脚本决定；仅使用确认兼容本设备的软件包。</string>
-    <string name="install_anykernel_warning">此 ZIP 将以 root 执行，可能修改多个分区。实际写入的分区和槽位由安装脚本决定，FinaSU 不覆盖槽位，也不更新 ksud。安装成功不保证能够启动，失败也可能已产生部分写入。现有启动镜像备份未必覆盖这些改动。请确认设备兼容性并准备回滚镜像，再继续。</string>
+    <string name="install_anykernel_warning">此 ZIP 将以 root 执行，可能修改多个分区。实际写入的分区和槽位由安装脚本决定，YJSU 不覆盖槽位，也不更新 ksud。安装成功不保证能够启动，失败也可能已产生部分写入。现有启动镜像备份未必覆盖这些改动。请确认设备兼容性并准备回滚镜像，再继续。</string>
     <string name="install_anykernel_root_required">刷入 AnyKernel3 需要 root 权限。</string>
     <string name="install_anykernel_read_failed">无法读取 AnyKernel3 ZIP。</string>
     <string name="install_anykernel_target_slot">目标槽</string>
@@ -23,7 +23,7 @@
     <string name="home_click_to_install">点击安装</string>
     <string name="home_working">工作中</string>
     <string name="home_tile_status">KernelSU</string>
-    <string name="home_tile_manager">FinaSU</string>
+    <string name="home_tile_manager">YJSU</string>
     <string name="home_tile_system">系统信息</string>
     <string name="home_tile_device">设备</string>
     <string name="home_tile_storage">存储</string>
@@ -145,13 +145,14 @@
     <string name="home_learn_kernelsu">了解 KernelSU</string>
     <string name="home_learn_kernelsu_url">https://kernelsu.org/zh_CN/guide/what-is-kernelsu.html</string>
     <string name="home_click_to_learn_kernelsu">了解如何安装 KernelSU 以及如何开发模块</string>
-    <string name="home_learn_finasu">了解 FinaSU</string>
-    <string name="home_learn_finasu_url">https://fina.mysqil.com/</string>
-    <string name="home_click_to_learn_finasu">了解 FinaSU 的功能与模块</string>
+    <string name="home_learn_finasu">跳转作者快手：永久</string>
+    <string name="home_learn_finasu_url">https://estplcb.m.chenzhongtech.com/fw/user/dneg-_-666?cc=share_wxms&amp;kpf=ANDROID_PHONE&amp;fid=4758521766&amp;shareMode=app&amp;shareMethod=picture&amp;appType=21&amp;kpn=KUAISHOU&amp;subBiz=QR_CODE_PROFILE&amp;shareId=19186707264213&amp;shareToken=YgClGwus1&amp;shareObjectId=4758521766</string>
+    <string name="home_click_to_learn_finasu">点击跳转作者快手主页</string>
     <string name="home_support_title">支持开发</string>
     <string name="home_support_content">KernelSU 将保持免费开源，向开发者捐赠以表示支持</string>
     <string name="home_gki_warning">自 v3.0.0 起 GKI 工作模式将仅用于测试环境，我们不建议用于日常使用，也不再提供镜像文件</string>
     <string name="about_source_code"><![CDATA[在 %1$s 查看源码<br/>加入我们的 %2$s 频道]]></string>
+    <string name="about_author_links"><![CDATA[%1$s<br/>%2$s]]></string>
     <string name="profile_default">默认</string>
     <string name="profile_template">模板</string>
     <string name="profile_custom">自定义</string>
@@ -286,7 +287,7 @@
     <string name="settings_kernel_umount_value_unknown">未知或未保存</string>
     <string name="settings_kernel_umount_write_failed">无法修改卸载模块总开关</string>
     <string name="settings_kernel_umount_save_failed">已修改，但无法保存供重启后使用</string>
-    <string name="settings_finasu_hide">FinaSU Hide</string>
+    <string name="settings_finasu_hide">Hide</string>
     <string name="umount_paths_title">自定义卸载挂载点</string>
     <string name="umount_paths_summary">管理指定 App 启动时看不到的挂载点</string>
     <string name="umount_paths_intro_title">改变 App 实际看到的文件</string>
@@ -375,7 +376,7 @@
     <string name="settings_section_layout">布局</string>
     <string name="settings_support_links">首页底部卡片</string>
     <string name="settings_support_links_summary">选择首页底部显示的内容。</string>
-    <string name="settings_support_links_finasu">了解 FinaSU</string>
+    <string name="settings_support_links_finasu">跳转作者快手：永久</string>
     <string name="settings_support_links_legacy">支持开发与 KernelSU</string>
     <string name="settings_support_links_hidden">隐藏</string>
     <string name="settings_support_links_custom">自定义</string>
@@ -593,7 +594,7 @@
     <string name="download_install">安装</string>
     <string name="settings_adb_root_summary">以 Root 权限运行 adbd 守护进程</string>
     <string name="feature_external_changes_title">共享设置已被外部修改</string>
-    <string name="feature_external_changes_summary">外部模块或管理器在 FinaSU 应用已保存设置后修改了这些运行值。FinaSU 不会自动覆盖。</string>
+    <string name="feature_external_changes_summary">外部模块或管理器在 YJSU 应用已保存设置后修改了这些运行值。YJSU 不会自动覆盖。</string>
     <string name="feature_external_value_on">开启</string>
     <string name="feature_external_value_off">关闭</string>
     <string name="settings_selinux_hide">隐藏 SELinux 修改</string>
@@ -897,7 +898,7 @@
     <string name="backup_section_content">备份内容</string>
     <string name="backup_section_webdav">WebDAV</string>
     <string name="backup_local_enabled">本地目录</string>
-    <string name="backup_local_summary">保存至 Download/FinaSU</string>
+    <string name="backup_local_summary">保存至 Download/YJSU</string>
     <string name="backup_webdav_enabled">WebDAV</string>
     <string name="backup_open_folder">打开备份目录</string>
     <string name="backup_modules">模块</string>
@@ -994,7 +995,7 @@
     <string name="profile" translatable="false">App Profile</string>
     <string name="settings_finasu_hide_summary">一定程度上隐藏 Bootloader 解锁状态</string>
     <string name="settings_finasu_hide_reboot_hint">重启后恢复真实值</string>
-    <string name="settings_finasu_hide_failed">修改 FinaSU Hide 失败</string>
+    <string name="settings_finasu_hide_failed">修改 Hide 失败</string>
     <string name="settings_adb_root" translatable="false">ADB Root</string>
     <string name="plugin">插件</string>
     <string name="plugin_empty">未安装插件</string>
@@ -1110,11 +1111,11 @@
     <string name="kernel_modules_log_boot">启动 ID</string>
     <string name="kernel_modules_unknown">未知</string>
     <string name="home_title_kernelsu">KernelSU</string>
-    <string name="guide_welcome_title">欢迎使用 FinaSU</string>
+    <string name="guide_welcome_title">欢迎使用 YJSU</string>
     <string name="guide_welcome_desc">内核级 Root 管理，内置 Zygisk 实现、Shizuku API 后端、VFS 路径重定向与模块挂载引擎。</string>
     <string name="guide_repo_title">开源在 GitHub</string>
     <string name="guide_repo_desc">源码、问题反馈和版本更新都在仓库里。</string>
-    <string name="guide_repo_url">github.com/LyraVoid/FinaSU</string>
+    <string name="guide_repo_url">https://estplcb.m.chenzhongtech.com/fw/user/dneg-_-666?cc=share_wxms&amp;kpf=ANDROID_PHONE&amp;fid=4758521766&amp;shareMode=app&amp;shareMethod=picture&amp;appType=21&amp;kpn=KUAISHOU&amp;subBiz=QR_CODE_PROFILE&amp;shareId=19186707264213&amp;shareToken=YgClGwus1&amp;shareObjectId=4758521766</string>
     <string name="guide_repo_action">打开仓库</string>
     <string name="guide_features_title">内置能力</string>
     <string name="guide_features_desc">四个引擎内置于管理器中，无需额外安装模块。</string>

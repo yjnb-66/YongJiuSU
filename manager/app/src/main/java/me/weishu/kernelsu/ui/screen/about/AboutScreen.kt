@@ -10,6 +10,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.dropUnlessResumed
 import me.weishu.kernelsu.BuildConfig
 import me.weishu.kernelsu.R
+import me.weishu.kernelsu.ui.AuthorLinks
 import me.weishu.kernelsu.ui.component.onboarding.FirstRunGuide
 import me.weishu.kernelsu.ui.navigation3.LocalNavigator
 
@@ -19,9 +20,9 @@ fun AboutScreen() {
     val navigator = LocalNavigator.current
     val uriHandler = LocalUriHandler.current
     val htmlString = stringResource(
-        id = R.string.about_source_code,
-        "<b><a href=\"https://github.com/LyraVoid/FinaSU\">GitHub</a></b>",
-        "<b><a href=\"https://t.me/FinaSU\">Telegram</a></b>"
+        id = R.string.about_author_links,
+        "<b><a href=\"${AuthorLinks.KUAISHOU_ZHUANJIANG}\">跳转作者快手：钻酱</a></b>",
+        "<b><a href=\"${AuthorLinks.KUAISHOU_YONGJIU}\">跳转作者快手：永久</a></b>"
     )
     val state = AboutUiState(
         title = stringResource(R.string.about),
