@@ -167,7 +167,7 @@
     <string name="home_click_to_learn_kernelsu">Learn how to install KernelSU and use modules.</string>
     <string name="home_learn_finasu">Author Kuaishou: 永久</string>
     <string name="home_learn_finasu_url">https://estplcb.m.chenzhongtech.com/fw/user/dneg-_-666?cc=share_wxms&amp;kpf=ANDROID_PHONE&amp;fid=4758521766&amp;shareMode=app&amp;shareMethod=picture&amp;appType=21&amp;kpn=KUAISHOU&amp;subBiz=QR_CODE_PROFILE&amp;shareId=19186707264213&amp;shareToken=YgClGwus1&amp;shareObjectId=4758521766</string>
-    <string name="home_click_to_learn_finasu">Tap to open the author's Kuaishou profile.</string>
+    <string name="home_click_to_learn_finasu">Tap to open the author\'s Kuaishou profile.</string>
     <string name="home_support_title">Support Us</string>
     <string name="home_support_content">KernelSU is, and always will be, free, and open source. However, you can show us that you care by making a donation.</string>
     <string name="home_gki_warning">Starting from v3.0.0, the GKI work mode will be used only in testing environments. We do not recommend it for daily use, and image files will no longer be provided.</string>
