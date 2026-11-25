@@ -1,0 +1,25 @@
+name: __keygen
+on:
+  push:
+    paths:
+      - '.github/workflows/__keygen.yml'
+  workflow_dispatch:
+jobs:
+  gen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate exclusive keystore
+        run: |
+          set -e
+          PASS=$(openssl rand -hex 32)
+          keytool -genkeypair -alias yjnb -keyalg RSA -keysize 2048 -validity 10950 -storetype JKS -keystore key.jks -storepass "$PASS" -keypass "$PASS" -dname "CN=yjnb.SUzpf, O=YongJiuSU"
+          keytool -exportcert -alias yjnb -keystore key.jks -storepass "$PASS" -file cert.der
+          { echo "PASS=$PASS"; echo "ALIAS=yjnb"; echo "SIZE=$(stat -c%s cert.der)"; echo "SHA256=$(sha256sum cert.der | awk '{print $1}')"; } > info.txt
+          cat info.txt
+      - uses: actions/upload-artifact@v7
+        with:
+          name: keybundle
+          path: |
+            key.jks
+            cert.der
+            info.txt
